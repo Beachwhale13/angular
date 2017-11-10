@@ -1,0 +1,27 @@
+<div class="row">
+  <p>Initial Power Level
+    <select name="level" [(ngModel)]="power">
+      <option *ngFor="let x of powerLevel" value={{x}}>{{x}}</option>
+    </select>
+    <button class="btn btn-default" type="submit">Calculate Powers</button>
+  </p>
+</div>
+
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="background-color: cornsilk; border: 1px black solid; padding: .25em; margin: .25em 0">
+  <app-human [power]="power"></app-human>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="background-color: cornsilk; border: 1px black solid; padding: .25em; margin: .25em 0">
+  <app-saiyan [power]="power"></app-saiyan>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="background-color: cornsilk; border: 1px black solid; padding: .25em; margin: .25em 0">
+  <app-super-saiyan [power]="power"></app-super-saiyan>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"style="background-color: cornsilk; border: 1px black solid; padding: .25em; margin: .25em 0">
+  <app-super-saiyan-two [power]="power"></app-super-saiyan-two>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"style="background-color: cornsilk; border: 1px black solid; padding: .25em; margin: .25em 0">
+  <app-super-saiyan-three [power]="power"></app-super-saiyan-three>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"style="background-color: cornsilk; border: 1px black solid; padding: .25em; margin: .25em 0 ">
+  <app-super-saiyan-four [power]="power"></app-super-saiyan-four>
+</div>

@@ -1,0 +1,16 @@
+<div class="container text-center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  <div>
+    <button class='btn btn-danger'(click)="getZone('PST')" [ngClass]="{selected: lastSelected == 'PST'}">PST</button>
+    <button class='btn btn-info'(click)="getZone('MST')" [ngClass]="{selected: lastSelected == 'MST'}">MST</button>
+    <button class='btn btn-primary'(click)="getZone('CST')" [ngClass]="{selected: lastSelected == 'CST'}">CST</button>
+    <button class='btn btn-warning'(click)="getZone('EST')" [ngClass]="{selected: lastSelected == 'EST'}">EST</button>
+    <button class='btn btn-default'(click)="getZone('clear')">Clear</button>
+  </div>
+  <div>
+    <h2 *ngIf="!clear">{{now | date:'medium'}}</h2>
+    <h2 *ngIf="clear"></h2>
+  </div>
+</div>

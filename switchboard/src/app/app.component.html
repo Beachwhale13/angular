@@ -1,0 +1,12 @@
+<div class="container text-center">
+  <h1>Switchboard</h1>
+  <div>
+    <div class="box" *ngFor="let switch of switchArray; let idx = index">
+
+      <button style="margin-top: 15px" class="btn btn-lg pull-center" (click)="switched(idx)" *ngIf="switch" [ngStyle]="{'background-color': 'green','color': 'white'}"> ON</button>
+<!-- [nyStyle]="{'on':switch}" -->
+
+
+      <button style="margin-top: 15px" class="btn btn-lg pull-center" (click)="switched(idx)" *ngIf="!switch" [ngStyle]="{'background-color': 'red', 'color': 'white'}">OFF</button>
+  </div>
+</div>

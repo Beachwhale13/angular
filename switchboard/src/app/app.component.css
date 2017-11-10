@@ -1,0 +1,17 @@
+.box{
+  width: 80px;
+  height: 80px;
+  border: 1px black solid;
+  background-color: Saddlebrown;
+  display: inline-block;
+}
+
+button{
+  background-color: red;
+  color: white;
+}
+
+button.on{
+  background-color: green;
+  color: white;
+}

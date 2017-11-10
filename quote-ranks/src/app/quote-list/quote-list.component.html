@@ -1,0 +1,19 @@
+<h1>Quotes List</h1>
+<div *ngFor="let quote of quotes | orderBy: 'popular':'desc'">
+  <div class="row" style="border: 2px black solid; margin-top: .5em; padding: .25em;">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <p>{{quote.text}}</p>
+      <p>- {{quote.author}}</p>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <h2>{{quote.popular}}</h2>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <button class="btn btn-default pull-center" style="background-color: MediumSeaGreen"(click)="voteAdd(quote)">Vote Up</button>
+      <button class="btn btn-default pull-center" style="background-color:tomato" (click)="voteRemove(quote)">Vote Down</button>
+      <button class="btn btn-info pull-center" style="background-color: black" (click)="delete(quote)">Delete</button>
+    </div>
+  </div>
+</div>

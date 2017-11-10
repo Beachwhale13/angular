@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>
+    {{title}}!
+  </h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Importance</th>
+        <th>Subject</th>
+        <th>Content</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of stuff">
+        <td>{{data.email | lowercase}}</td>
+        <td>
+          <span *ngIf="data.important">High</span>
+          <span *ngIf="!data.important">Low</span>
+        </td>
+        <td>{{data.subject}}</td>
+        <td>{{data.content}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

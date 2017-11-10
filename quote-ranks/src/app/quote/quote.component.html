@@ -1,0 +1,29 @@
+<!-- {{quote | json}} -->
+
+<div class='row'>
+  <div class='col-lg-10 col-md-10 col-sm-10 col-xs-10'>
+    <form #quoteForm="ngForm" (submit)="onSubmit();">
+      <div class="form-group">
+        <h1 for="text" class="form-label">Add A Quote</h1>
+        <textarea class="form-control" rows="5" name="text" required minlength='4' [(ngModel)]="quote.text" #text="ngModel"></textarea>
+      </div>
+      <div class="form-group row pull-right">
+        <label for="author" class="col-sm-2 col-form-label">Author &nbsp;&nbsp;&nbsp;</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="author" required minlength='1' [(ngModel)]="quote.author" #author="ngModel"/>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+    <button class="btn btn-default pull-right" type="submit" [disabled]="!quoteForm.valid">Add Quote</button>
+    </form>
+  </div>
+
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
+    <p *ngIf="text.dirty && text.errors" class="error">Quote must be 4 characters long</p>
+    <p *ngIf="text.invalid && (text.dirty || text.touched)" class="error">Quote is required</p>
+    <p *ngIf="author.dirty && author.errors" class="error">Author must be at least 1 characters long</p>
+    <p *ngIf="author.invalid && (author.dirty || author.touched)" class="error">Author is required</p>
+  </div>
+</div>
