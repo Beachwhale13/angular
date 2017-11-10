@@ -21,8 +21,8 @@ export class QuoteComponent implements OnInit {
   }
 
   onSubmit(){
-    this.quote = {text: '', author: '', popular: 0};
     this.createQuote.emit(this.quote);
+    this.quote = {text: '', author: '', popular: 0};
   }
 
 }
