@@ -1,0 +1,32 @@
+<div class="container" style="border: 3px black solid; border-radius: 2em; margin-top: 1em; padding: 1em;">
+  <div class="page-header">
+    <h1>GitHub Score</h1>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <form #form="ngForm" (submit)="calculateScore(form)">
+        <div style="margin-bottom: 1em;">
+          <label for="username">Github Username: </label>
+          <input class="pull-right" type="text" name="username" required [(ngModel)]="user" #name="ngModel"/>
+          <p *ngIf="username.invalid && (username.dirty || username.touched)" style="color: red">Please enter a username</p>
+        </div>
+        <button type="submit" class="btn btn-block btn-default" style="box-shadow: 5px 5px;" [disabled]="form.invalid">Calculate my Github Score</button>
+      </form>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">
+      <div *ngIf="userExists">
+        <h1>Your Score: {{ score }}</h1>
+        <h3 style="color: red" *ngIf="score < 20">Needs Work!</h3>
+        <h3 style="color:orange" *ngIf="score >= 20 && score < 50">A decent start!</h3>
+        <h3 *ngIf="score >= 50 && score < 100">Doing good!</h3>
+        <h3 style="color:green" *ngIf="score >= 100 && score < 200">Great Job!</h3>
+        <h3 style="color:blue" *ngIf="score >= 200">Github Elite!</h3>
+      </div>
+      <div *ngIf="userExists === false">
+        <h3>User '{{ username }}' does not exist, choose a different github username.</h3>
+      </div>
+    </div>
+
+  </div>
+</div>
